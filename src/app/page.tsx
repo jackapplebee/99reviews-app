@@ -1,4 +1,10 @@
+'use client'
+
+import { useSession, signOut } from 'next-auth/react'
+
 export default function HomePage() {
+  const { data: session, status } = useSession()
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -8,18 +14,37 @@ export default function HomePage() {
             99 REVIEWS
           </h1>
           <div className="flex space-x-3">
-            <a 
-              href="/auth/login"
-              className="brutalist-button bg-transparent text-black border-2 border-black hover:bg-black hover:text-white"
-            >
-              SIGN IN
-            </a>
-            <a 
-              href="/auth/register"
-              className="brutalist-button bg-black text-white border-2 border-black hover:bg-white hover:text-black"
-            >
-              GET STARTED
-            </a>
+            {status === 'authenticated' ? (
+              <>
+                <a 
+                  href="/dashboard"
+                  className="brutalist-button bg-transparent text-black border-2 border-black hover:bg-black hover:text-white"
+                >
+                  DASHBOARD
+                </a>
+                <button 
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  className="brutalist-button bg-red-600 text-white border-2 border-red-600 hover:bg-white hover:text-red-600"
+                >
+                  SIGN OUT
+                </button>
+              </>
+            ) : (
+              <>
+                <a 
+                  href="/auth/login"
+                  className="brutalist-button bg-transparent text-black border-2 border-black hover:bg-black hover:text-white"
+                >
+                  SIGN IN
+                </a>
+                <a 
+                  href="/auth/register"
+                  className="brutalist-button bg-black text-white border-2 border-black hover:bg-white hover:text-black"
+                >
+                  GET STARTED
+                </a>
+              </>
+            )}
           </div>
         </div>
       </div>
