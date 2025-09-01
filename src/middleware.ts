@@ -18,8 +18,8 @@ export default withAuth({
       
       // Protect dashboard routes
       if (req.nextUrl.pathname.startsWith('/dashboard')) {
-        // Check if token exists and has required fields
-        return !!token && !!token.email && !!token.businessId
+        // Check if token exists - the token contains the user ID at minimum
+        return !!token && !!token.sub
       }
       return true
     }
