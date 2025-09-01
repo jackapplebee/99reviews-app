@@ -6,42 +6,42 @@ export default function HomePage() {
   const { data: session, status } = useSession()
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white landing-page">
       {/* Header */}
-      <div className="brutalist-container border-b-2 border-black">
-        <div className="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
-          <h1 className="text-lg font-bold letter-spacing-logo uppercase text-black">
-            99 REVIEWS
+      <div className="border-b border-gray-200 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <h1 className="text-xl font-bold text-black">
+            99Reviews
           </h1>
-          <div className="flex space-x-3">
+          <div className="flex items-center space-x-4">
             {status === 'authenticated' ? (
               <>
                 <a 
                   href="/dashboard"
-                  className="brutalist-button bg-transparent text-black border-2 border-black hover:bg-black hover:text-white"
+                  className="landing-button px-4 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 border-none"
                 >
-                  DASHBOARD
+                  Dashboard
                 </a>
                 <button 
                   onClick={() => signOut({ callbackUrl: '/' })}
-                  className="brutalist-button bg-red-600 text-white border-2 border-red-600 hover:bg-white hover:text-red-600"
+                  className="landing-button px-4 py-2 bg-red-500 text-white hover:bg-red-600 border-none"
                 >
-                  SIGN OUT
+                  Sign Out
                 </button>
               </>
             ) : (
               <>
                 <a 
                   href="/auth/login"
-                  className="brutalist-button bg-transparent text-black border-2 border-black hover:bg-black hover:text-white"
+                  className="landing-button px-4 py-2 bg-white text-gray-700 hover:bg-gray-50 border border-gray-300"
                 >
-                  SIGN IN
+                  Sign In
                 </a>
                 <a 
                   href="/auth/register"
-                  className="brutalist-button bg-black text-white border-2 border-black hover:bg-white hover:text-black"
+                  className="landing-button px-6 py-2 bg-black text-white hover:bg-gray-800 border-none"
                 >
-                  GET STARTED
+                  Get Started
                 </a>
               </>
             )}
@@ -53,94 +53,105 @@ export default function HomePage() {
       <div className="max-w-4xl mx-auto px-5 py-16">
         <div className="text-center mb-16">
           {/* Pain-First Headline */}
-          <h1 className="text-6xl font-black text-black mb-6 letter-spacing-title leading-tight">
+          <h1 className="landing-hero-title text-5xl md:text-6xl text-gray-900 mb-6">
             Stop Bad Reviews From<br/>
-            <span style={{ color: 'var(--accent)' }}>Killing Your Business</span>
+            <span className="text-orange-500">Killing Your Business</span>
           </h1>
           
           {/* Big Promise */}
-          <p className="text-2xl font-bold text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
+          <p className="landing-subtitle text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Get 10x more 5-star Google reviews while automatically filtering negative feedback before it goes public
           </p>
 
           {/* Social Proof */}
-          <div className="flex items-center justify-center space-x-8 mb-8 text-sm font-bold text-gray-600">
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-10 text-sm text-gray-500">
             <div className="flex items-center space-x-2">
-              <span className="text-green-500">✓</span>
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span>1,200+ businesses protected</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span className="text-blue-500">★</span>
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
               <span>47K+ positive reviews generated</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span className="text-purple-500">⚡</span>
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
               <span>3-minute setup</span>
             </div>
           </div>
 
           {/* Primary CTA */}
-          <div className="mb-12">
+          <div className="mb-16">
             <a 
               href="/auth/register"
-              className="brutalist-button bg-black text-white border-2 border-black hover:bg-white hover:text-black text-lg px-10 py-4 mb-4 inline-block"
+              className="landing-button text-lg px-8 py-4 bg-black text-white hover:bg-gray-800 border-none inline-block"
             >
               Start Free Trial →
             </a>
-            <div className="text-sm text-gray-500">
+            <div className="text-sm text-gray-500 mt-3">
               Free for 14 days • No credit card required • Cancel anytime
             </div>
           </div>
 
           {/* Value Stack */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-black text-black mb-8 text-center">
+          <div className="max-w-6xl mx-auto mb-20">
+            <h2 className="landing-hero-title text-3xl md:text-4xl text-gray-900 mb-12 text-center">
               How It Works
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="brutalist-card p-6">
-                <div className="text-3xl mb-4">🎯</div>
-                <h3 className="text-xl font-black text-black mb-3">Smart Review Routing</h3>
-                <p className="text-gray-700">Happy customers (4-5 stars) get sent to Google. Unhappy ones (1-3 stars) stay private for you to address.</p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="landing-card p-8">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <span className="text-2xl">🎯</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Smart Review Routing</h3>
+                <p className="text-gray-600 leading-relaxed">Happy customers (4-5 stars) get sent to Google. Unhappy ones (1-3 stars) stay private for you to address.</p>
               </div>
-              <div className="brutalist-card p-6">
-                <div className="text-3xl mb-4">⚡</div>
-                <h3 className="text-xl font-black text-black mb-3">Automated Follow-Up</h3>
-                <p className="text-gray-700">Stop manually asking for reviews. Our system automatically sends personalized requests to your customers.</p>
+              <div className="landing-card p-8">
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Automated Follow-Up</h3>
+                <p className="text-gray-600 leading-relaxed">Stop manually asking for reviews. Our system automatically sends personalized requests to your customers.</p>
               </div>
-              <div className="brutalist-card p-6">
-                <div className="text-3xl mb-4">🛡️</div>
-                <h3 className="text-xl font-black text-black mb-3">Reputation Protection</h3>
-                <p className="text-gray-700">Fix issues privately before they become public problems. Turn unhappy customers into loyal advocates.</p>
+              <div className="landing-card p-8">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                  <span className="text-2xl">🛡️</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Reputation Protection</h3>
+                <p className="text-gray-600 leading-relaxed">Fix issues privately before they become public problems. Turn unhappy customers into loyal advocates.</p>
               </div>
-              <div className="brutalist-card p-6">
-                <div className="text-3xl mb-4">📈</div>
-                <h3 className="text-xl font-black text-black mb-3">Instant Results</h3>
-                <p className="text-gray-700">See more positive reviews within days. No technical setup required - works with any business type.</p>
+              <div className="landing-card p-8">
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                  <span className="text-2xl">📈</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Instant Results</h3>
+                <p className="text-gray-600 leading-relaxed">See more positive reviews within days. No technical setup required - works with any business type.</p>
               </div>
             </div>
           </div>
 
           {/* Social Proof Results */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-black text-black mb-8 text-center">
+          <div className="mb-20">
+            <h2 className="landing-hero-title text-3xl md:text-4xl text-gray-900 mb-12 text-center">
               Real Results From Real Businesses
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-5xl font-black text-green-600 mb-2">127%</div>
-                <div className="text-lg font-bold text-black mb-2">More Google Reviews</div>
-                <div className="text-sm text-gray-600">"Went from 23 to 52 five-star reviews in 30 days. This actually works." - Mike's Auto Shop</div>
+              <div className="landing-card p-6 text-center">
+                <div className="text-4xl font-bold text-green-600 mb-3">127%</div>
+                <div className="text-lg font-semibold text-gray-900 mb-3">More Google Reviews</div>
+                <div className="text-sm text-gray-600 italic">"Went from 23 to 52 five-star reviews in 30 days. This actually works."</div>
+                <div className="text-xs text-gray-500 mt-2">- Mike's Auto Shop</div>
               </div>
-              <div className="text-center">
-                <div className="text-5xl font-black text-blue-600 mb-2">$47K</div>
-                <div className="text-lg font-bold text-black mb-2">Extra Monthly Revenue</div>
-                <div className="text-sm text-gray-600">"Higher ratings brought way more customers. The ROI is insane." - Sarah's Restaurant</div>
+              <div className="landing-card p-6 text-center">
+                <div className="text-4xl font-bold text-blue-600 mb-3">$47K</div>
+                <div className="text-lg font-semibold text-gray-900 mb-3">Extra Monthly Revenue</div>
+                <div className="text-sm text-gray-600 italic">"Higher ratings brought way more customers. The ROI is insane."</div>
+                <div className="text-xs text-gray-500 mt-2">- Sarah's Restaurant</div>
               </div>
-              <div className="text-center">
-                <div className="text-5xl font-black text-purple-600 mb-2">4.9★</div>
-                <div className="text-lg font-bold text-black mb-2">Average Rating</div>
-                <div className="text-sm text-gray-600">"Bad reviews stopped showing up. Now it's only good ones." - Tom's Fitness</div>
+              <div className="landing-card p-6 text-center">
+                <div className="text-4xl font-bold text-purple-600 mb-3">4.9★</div>
+                <div className="text-lg font-semibold text-gray-900 mb-3">Average Rating</div>
+                <div className="text-sm text-gray-600 italic">"Bad reviews stopped showing up. Now it's only good ones."</div>
+                <div className="text-xs text-gray-500 mt-2">- Tom's Fitness</div>
               </div>
             </div>
           </div>
@@ -149,77 +160,23 @@ export default function HomePage() {
 
 
         {/* Final CTA */}
-        <div className="text-center bg-gray-50 rounded-lg p-12">
-          <h2 className="text-4xl font-black text-black mb-6">
-            Ready to Transform Your Reviews?
-          </h2>
-          <p className="text-xl text-gray-700 mb-8">
-            Join 1,200+ businesses that stopped worrying about bad reviews
-          </p>
-          <a 
-            href="/auth/register"
-            className="brutalist-button bg-black text-white border-2 border-black hover:bg-white hover:text-black text-xl px-12 py-6 mb-4 inline-block"
-          >
-            Start Free Trial →
-          </a>
-          <div className="text-sm text-gray-500">
-            14-day free trial • Cancel anytime • No setup fees
-          </div>
-        </div>
-        
-        {/* Original Features Grid - Simplified */}
-        <div className="grid md:grid-cols-3 gap-5 mt-20">
-          <div className="brutalist-card p-8 text-center">
-            <div className="text-4xl mb-4">⚡</div>
-            <h3 className="text-xl font-black mb-4 uppercase letter-spacing-label text-black">Smart Routing</h3>
-            <p className="text-sm font-bold letter-spacing-body uppercase text-gray-600">
-              Automatically route 4-5 star reviews to Google while keeping 1-3 star feedback internal.
+        <div className="max-w-4xl mx-auto">
+          <div className="landing-card text-center p-12 bg-gradient-to-br from-gray-50 to-white">
+            <h2 className="landing-hero-title text-3xl md:text-4xl text-gray-900 mb-6">
+              Ready to Transform Your Reviews?
+            </h2>
+            <p className="landing-subtitle text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Join 1,200+ businesses that stopped worrying about bad reviews
             </p>
-          </div>
-          <div className="brutalist-card p-8 text-center">
-            <div className="text-4xl mb-4">🏢</div>
-            <h3 className="text-xl font-black mb-4 uppercase letter-spacing-label text-black">Multi-Tenant</h3>
-            <p className="text-sm font-bold letter-spacing-body uppercase text-gray-600">
-              Complete business isolation with custom branding and separate data.
-            </p>
-          </div>
-          <div className="brutalist-card p-8 text-center">
-            <div className="text-4xl mb-4">📊</div>
-            <h3 className="text-xl font-black mb-4 uppercase letter-spacing-label text-black">Analytics</h3>
-            <p className="text-sm font-bold letter-spacing-body uppercase text-gray-600">
-              Real-time dashboard with conversion tracking and business insights.
-            </p>
-          </div>
-        </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 grid md:grid-cols-4 gap-5">
-          <div className="brutalist-card p-6 text-center bg-black text-white">
-            <div className="text-3xl font-black mb-2">99.9%</div>
-            <div className="text-xs font-bold letter-spacing-label uppercase">UPTIME</div>
-          </div>
-          <div className="brutalist-card p-6 text-center bg-black text-white">
-            <div className="text-3xl font-black mb-2">10K+</div>
-            <div className="text-xs font-bold letter-spacing-label uppercase">BUSINESSES</div>
-          </div>
-          <div className="brutalist-card p-6 text-center bg-black text-white">
-            <div className="text-3xl font-black mb-2">1M+</div>
-            <div className="text-xs font-bold letter-spacing-label uppercase">REVIEWS</div>
-          </div>
-          <div className="brutalist-card p-6 text-center bg-black text-white">
-            <div className="text-3xl font-black mb-2">4.9★</div>
-            <div className="text-xs font-bold letter-spacing-label uppercase">RATING</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="brutalist-container border-t-2 border-black">
-        <div className="max-w-7xl mx-auto px-5 py-8">
-          <div className="text-center">
-            <p className="text-xs font-bold letter-spacing-body uppercase text-gray-600">
-              © 2025 99 REVIEWS. ALL RIGHTS RESERVED.
-            </p>
+            <a 
+              href="/auth/register"
+              className="landing-button text-xl px-10 py-4 bg-black text-white hover:bg-gray-800 border-none inline-block mb-4"
+            >
+              Start Free Trial →
+            </a>
+            <div className="text-sm text-gray-500">
+              14-day free trial • Cancel anytime • No setup fees
+            </div>
           </div>
         </div>
       </div>
