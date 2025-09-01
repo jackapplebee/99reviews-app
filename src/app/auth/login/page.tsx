@@ -29,9 +29,11 @@ function LoginForm() {
 
       if (result?.error) {
         setError('INVALID EMAIL OR PASSWORD')
+        console.log('Sign-in error:', result.error)
       } else {
-        router.push('/dashboard')
-        router.refresh()
+        console.log('Sign-in successful, redirecting...')
+        // Use window.location for more reliable redirect
+        window.location.href = '/dashboard'
       }
     } catch (error) {
       setError('SOMETHING WENT WRONG. PLEASE TRY AGAIN.')
