@@ -5,30 +5,15 @@ export default withAuth({
     signIn: '/auth/login',
   },
   callbacks: {
-    authorized: ({ token, req }) => {
-      console.log('Middleware check:', { 
-        path: req.nextUrl.pathname, 
-        hasToken: !!token,
-        tokenData: token ? {
-          email: token.email,
-          businessId: token.businessId,
-          businessSlug: token.businessSlug
-        } : 'none'
-      })
-      
-      // Protect dashboard routes
-      if (req.nextUrl.pathname.startsWith('/dashboard')) {
-        // Check if token exists - the token contains the user ID at minimum
-        return !!token && !!token.sub
-      }
-      return true
+    authorized: ({ token }) => {
+      // Simply check if token exists - NextAuth handles the rest
+      return !!token
     }
   }
 })
 
 export const config = {
   matcher: [
-    // Temporarily disable middleware
-    // '/dashboard/:path*'
+    '/dashboard/:path*'
   ]
 }
