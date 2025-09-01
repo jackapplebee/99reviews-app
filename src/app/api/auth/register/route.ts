@@ -58,8 +58,7 @@ export async function POST(request: NextRequest) {
         data: {
           id: generateId(),
           name: businessName,
-          slug: businessSlug,
-          email: email
+          slug: businessSlug
         }
       })
 
@@ -69,8 +68,10 @@ export async function POST(request: NextRequest) {
           id: generateId(),
           email,
           name,
-          passwordHash,
-          businessId: business.id
+          password: passwordHash,
+          businessId: business.id,
+          businessSlug: business.slug,
+          role: 'OWNER'
         }
       })
 
