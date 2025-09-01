@@ -9,12 +9,17 @@ export default withAuth({
       console.log('Middleware check:', { 
         path: req.nextUrl.pathname, 
         hasToken: !!token,
-        token: token ? 'exists' : 'none'
+        tokenData: token ? {
+          email: token.email,
+          businessId: token.businessId,
+          businessSlug: token.businessSlug
+        } : 'none'
       })
       
       // Protect dashboard routes
       if (req.nextUrl.pathname.startsWith('/dashboard')) {
-        return !!token
+        // Check if token exists and has required fields
+        return !!token && !!token.email && !!token.businessId
       }
       return true
     }
