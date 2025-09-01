@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client'
 
 export const dynamic = 'force-dynamic'
 
-export async function POST() {
+async function runMigration() {
   const prisma = new PrismaClient()
   
   try {
@@ -103,18 +103,28 @@ export async function POST() {
 
     await prisma.$disconnect()
 
-    return NextResponse.json({ 
+    return { 
       success: true,
       message: 'Database tables created successfully!' 
-    })
+    }
     
   } catch (error: any) {
     await prisma.$disconnect()
     console.error('Migration error:', error)
     
-    return NextResponse.json({ 
+    return { 
       success: false,
       error: error.message 
-    }, { status: 500 })
+    }
   }
+}
+
+export async function GET() {
+  const result = await runMigration()
+  return NextResponse.json(result, result.success ? {} : { status: 500 })
+}
+
+export async function POST() {
+  const result = await runMigration()
+  return NextResponse.json(result, result.success ? {} : { status: 500 })
 }
