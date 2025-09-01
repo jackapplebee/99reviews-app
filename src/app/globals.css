@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #000000;
+  --accent: #FF5E00;
+  --success: #90EE90;
+  --warning: #FFE5B4;
+  --negative: #FFB6C1;
+  --blue: #0066FF;
+  --bg: #FFFFFF;
+  --gray: #F5F5F5;
+  --gray-border: #E5E5E5;
+  --gray-dark: #666666;
+  --text-light: #999999;
+}
+
+body {
+  color: var(--primary);
+  background: var(--bg);
+  font-family: 'Space Grotesk', monospace;
+  font-weight: 500;
+}
+
+/* Remove native dropdown arrows globally */
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-image: none !important;
+}
+
+/* Remove IE/Edge dropdown arrow */
+select::-ms-expand {
+  display: none;
+}
+
+/* Neo-Brutalist Base Styles */
+.brutalist-container {
+  border: 2px solid var(--primary);
+  border-radius: 0;
+  transition: all 0.2s ease;
+}
+
+.brutalist-button {
+  border: 2px solid var(--primary);
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+}
+
+.brutalist-button:hover {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
+.brutalist-card {
+  border: 2px solid var(--primary);
+  border-radius: 0;
+  background: var(--bg);
+  padding: 20px;
+}
+
+.brutalist-table-header {
+  background-color: var(--primary);
+  color: var(--bg);
+  border: none;
+}
+
+.brutalist-progress-bar {
+  height: 8px;
+  background-color: var(--gray);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.brutalist-progress-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .letter-spacing-logo { letter-spacing: 1.5px; }
+  .letter-spacing-title { letter-spacing: 1px; }
+  .letter-spacing-label { letter-spacing: 0.5px; }
+  .letter-spacing-body { letter-spacing: 0.3px; }
+}

@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Business/Tenant model - each restaurant gets their own business
+model Business {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  name      String
+  slug      String   @unique  // e.g., "acme-restaurant" for URLs
+  email     String   @unique
+  
+  // Relations
+  users     User[]
+  customers Customer[]
+  reviews   Review[]
+  
+  @@map("businesses")
+}
+
+// User model - employees of businesses (restaurant staff)
+model User {
+  id           String   @id @default(cuid())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  
+  email        String   @unique
+  name         String
+  passwordHash String
+  
+  // Business relation - each user belongs to one business
+  businessId   String
+  business     Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  
+  @@map("users")
+}
+
+// Customer model - restaurant patrons
+model Customer {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  firstName String
+  lastName  String
+  email     String
+  
+  // Business relation - customers belong to specific businesses
+  businessId String
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  
+  // Relations
+  reviews   Review[]
+  
+  // Ensure unique email per business
+  @@unique([businessId, email])
+  @@map("customers")
+}
+
+// Review model - customer feedback
+model Review {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  rating    Int      // 1-5 stars
+  comment   String?
+  isPublic  Boolean  @default(false) // true if sent to Google, false if internal
+  
+  // Business relation
+  businessId String
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  
+  // Customer relation
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  
+  @@map("reviews")
+}
