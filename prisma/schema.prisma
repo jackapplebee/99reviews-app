@@ -13,9 +13,18 @@ model Business {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   
-  name      String
-  slug      String   @unique  // e.g., "acme-restaurant" for URLs
-  email     String   @unique
+  name             String
+  slug             String   @unique  // e.g., "acme-restaurant" for URLs
+  businessType     String?  // Restaurant, Retail Store, etc.
+  phoneNumber      String?
+  address          String?
+  city             String?
+  state            String?
+  zipCode          String?
+  googleBusinessUrl String?
+  monthlyCustomers  String?  // 1-50, 51-200, etc.
+  primaryGoals      String?  // JSON array of goals
+  websiteUrl        String?
   
   // Relations
   users     User[]
@@ -33,10 +42,12 @@ model User {
   
   email        String   @unique
   name         String
-  passwordHash String
+  password     String   // Changed from passwordHash to match existing code
+  role         String   @default("USER") // USER, ADMIN, OWNER
   
   // Business relation - each user belongs to one business
   businessId   String
+  businessSlug String   // For easier lookups
   business     Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
   
   @@map("users")
