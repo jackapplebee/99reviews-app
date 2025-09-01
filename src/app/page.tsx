@@ -53,151 +53,117 @@ export default function HomePage() {
       <div className="max-w-4xl mx-auto px-5 py-16">
         <div className="text-center mb-16">
           {/* Pain-First Headline */}
-          <h1 className="text-5xl font-black text-black mb-4 uppercase letter-spacing-title leading-tight">
-            TIRED OF BAD REVIEWS<br/>
-            <span style={{ color: 'var(--accent)' }}>DESTROYING YOUR BUSINESS?</span>
+          <h1 className="text-6xl font-black text-black mb-6 letter-spacing-title leading-tight">
+            Stop Bad Reviews From<br/>
+            <span style={{ color: 'var(--accent)' }}>Killing Your Business</span>
           </h1>
           
           {/* Big Promise */}
-          <p className="text-xl font-bold letter-spacing-body uppercase text-gray-700 mb-6 leading-relaxed">
-            Get 10X more 5-star Google reviews while automatically hiding negative feedback<br/>
-            <span className="text-black">WITHOUT ASKING CUSTOMERS TO "LEAVE A REVIEW"</span>
+          <p className="text-2xl font-bold text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
+            Get 10x more 5-star Google reviews while automatically filtering negative feedback before it goes public
           </p>
 
           {/* Social Proof */}
-          <div className="brutalist-container bg-yellow-100 border-2 border-black p-4 mb-8 inline-block">
-            <p className="text-sm font-bold letter-spacing-label uppercase text-black">
-              📈 1,247+ BUSINESSES ALREADY USING • 47,000+ NEW 5-STAR REVIEWS THIS MONTH
-            </p>
+          <div className="flex items-center justify-center space-x-8 mb-8 text-sm font-bold text-gray-600">
+            <div className="flex items-center space-x-2">
+              <span className="text-green-500">✓</span>
+              <span>1,200+ businesses protected</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-blue-500">★</span>
+              <span>47K+ positive reviews generated</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-purple-500">⚡</span>
+              <span>3-minute setup</span>
+            </div>
           </div>
 
           {/* Primary CTA */}
-          <div className="mb-8">
+          <div className="mb-12">
             <a 
               href="/auth/register"
-              className="brutalist-button bg-black text-white border-2 border-black hover:bg-white hover:text-black text-xl px-12 py-6 mb-4 inline-block"
+              className="brutalist-button bg-black text-white border-2 border-black hover:bg-white hover:text-black text-lg px-10 py-4 mb-4 inline-block"
             >
-              START GETTING 5-STAR REVIEWS TODAY →
+              Start Free Trial →
             </a>
-            <div className="text-sm font-bold letter-spacing-body uppercase text-gray-600">
-              ⚡ SETUP IN 3 MINUTES • NO CREDIT CARD • 14-DAY FREE TRIAL
+            <div className="text-sm text-gray-500">
+              Free for 14 days • No credit card required • Cancel anytime
             </div>
           </div>
 
           {/* Value Stack */}
-          <div className="text-left max-w-2xl mx-auto mb-12">
-            <h2 className="text-2xl font-black text-black mb-6 uppercase letter-spacing-title text-center">
-              HERE'S WHAT YOU GET:
+          <div className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-3xl font-black text-black mb-8 text-center">
+              How It Works
             </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="brutalist-container bg-green-50 border-2 border-black p-4">
-                <div className="text-lg font-black text-black mb-2 uppercase">✅ SMART REVIEW ROUTING</div>
-                <div className="text-sm font-bold text-gray-700">Happy customers go to Google. Unhappy ones stay private.</div>
-              </div>
-              <div className="brutalist-container bg-blue-50 border-2 border-black p-4">
-                <div className="text-lg font-black text-black mb-2 uppercase">✅ AUTOMATED FOLLOW-UP</div>
-                <div className="text-sm font-bold text-gray-700">Never manually ask for reviews again. We handle everything.</div>
-              </div>
-              <div className="brutalist-container bg-purple-50 border-2 border-black p-4">
-                <div className="text-lg font-black text-black mb-2 uppercase">✅ DAMAGE CONTROL</div>
-                <div className="text-sm font-bold text-gray-700">Fix problems privately before they hurt your reputation.</div>
-              </div>
-              <div className="brutalist-container bg-orange-50 border-2 border-black p-4">
-                <div className="text-lg font-black text-black mb-2 uppercase">✅ INSTANT SETUP</div>
-                <div className="text-sm font-bold text-gray-700">Works with any business. No technical skills required.</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Urgency + Secondary CTA */}
-          <div className="brutalist-container bg-red-100 border-2 border-red-600 p-6 mb-8">
-            <h3 className="text-xl font-black text-red-800 mb-3 uppercase letter-spacing-title">
-              🚨 LIMITED TIME: FREE FOR 14 DAYS
-            </h3>
-            <p className="text-sm font-bold text-red-700 mb-4 uppercase">
-              Usually $97/month • Get started now before we end this promotion
-            </p>
-            <a 
-              href="/auth/register"
-              className="brutalist-button bg-red-600 text-white border-2 border-red-600 hover:bg-white hover:text-red-600 text-lg px-8 py-4"
-            >
-              CLAIM YOUR FREE TRIAL NOW →
-            </a>
-          </div>
-
-        </div>
-
-        {/* Social Proof Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-black text-black mb-8 uppercase letter-spacing-title text-center">
-            REAL RESULTS FROM REAL BUSINESSES:
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="brutalist-container bg-white border-2 border-black p-6">
-              <div className="text-4xl font-black text-green-600 mb-2">+127%</div>
-              <div className="text-sm font-bold text-black uppercase mb-2">Google Reviews in 30 days</div>
-              <div className="text-xs text-gray-600">"Went from 23 to 52 five-star reviews. Game changer." - Mike's Auto Shop</div>
-            </div>
-            <div className="brutalist-container bg-white border-2 border-black p-6">
-              <div className="text-4xl font-black text-blue-600 mb-2">$47K</div>
-              <div className="text-sm font-bold text-black uppercase mb-2">Extra Revenue Per Month</div>
-              <div className="text-xs text-gray-600">"Higher ratings = more customers. Simple math." - Sarah's Restaurant</div>
-            </div>
-            <div className="brutalist-container bg-white border-2 border-black p-6">
-              <div className="text-4xl font-black text-purple-600 mb-2">4.9★</div>
-              <div className="text-sm font-bold text-black uppercase mb-2">Average Google Rating</div>
-              <div className="text-xs text-gray-600">"Bad reviews stopped showing up. Only good ones now." - Tom's Gym</div>
-            </div>
-          </div>
-        </div>
-
-        {/* The Problem/Solution */}
-        <div className="brutalist-container bg-gray-50 border-2 border-black p-8 mb-16">
-          <h2 className="text-3xl font-black text-black mb-6 uppercase letter-spacing-title text-center">
-            HERE'S THE PROBLEM EVERY BUSINESS OWNER FACES:
-          </h2>
-          <div className="max-w-3xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-black text-red-600 mb-4 uppercase">❌ THE OLD WAY SUCKS:</h3>
-                <ul className="space-y-2 text-sm font-bold text-gray-700">
-                  <li>• Beg customers to leave reviews</li>
-                  <li>• Bad reviews tank your reputation</li>
-                  <li>• Spend hours managing feedback</li>
-                  <li>• Miss out on potential customers</li>
-                  <li>• Competitors outrank you online</li>
-                </ul>
+              <div className="brutalist-card p-6">
+                <div className="text-3xl mb-4">🎯</div>
+                <h3 className="text-xl font-black text-black mb-3">Smart Review Routing</h3>
+                <p className="text-gray-700">Happy customers (4-5 stars) get sent to Google. Unhappy ones (1-3 stars) stay private for you to address.</p>
               </div>
-              <div>
-                <h3 className="text-xl font-black text-green-600 mb-4 uppercase">✅ THE 99REVIEWS WAY:</h3>
-                <ul className="space-y-2 text-sm font-bold text-gray-700">
-                  <li>• Automatic 5-star review collection</li>
-                  <li>• Bad reviews never see daylight</li>
-                  <li>• Set it and forget it automation</li>
-                  <li>• Customers find YOU instead</li>
-                  <li>• Dominate local search results</li>
-                </ul>
+              <div className="brutalist-card p-6">
+                <div className="text-3xl mb-4">⚡</div>
+                <h3 className="text-xl font-black text-black mb-3">Automated Follow-Up</h3>
+                <p className="text-gray-700">Stop manually asking for reviews. Our system automatically sends personalized requests to your customers.</p>
+              </div>
+              <div className="brutalist-card p-6">
+                <div className="text-3xl mb-4">🛡️</div>
+                <h3 className="text-xl font-black text-black mb-3">Reputation Protection</h3>
+                <p className="text-gray-700">Fix issues privately before they become public problems. Turn unhappy customers into loyal advocates.</p>
+              </div>
+              <div className="brutalist-card p-6">
+                <div className="text-3xl mb-4">📈</div>
+                <h3 className="text-xl font-black text-black mb-3">Instant Results</h3>
+                <p className="text-gray-700">See more positive reviews within days. No technical setup required - works with any business type.</p>
               </div>
             </div>
           </div>
+
+          {/* Social Proof Results */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-black text-black mb-8 text-center">
+              Real Results From Real Businesses
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-5xl font-black text-green-600 mb-2">127%</div>
+                <div className="text-lg font-bold text-black mb-2">More Google Reviews</div>
+                <div className="text-sm text-gray-600">"Went from 23 to 52 five-star reviews in 30 days. This actually works." - Mike's Auto Shop</div>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl font-black text-blue-600 mb-2">$47K</div>
+                <div className="text-lg font-bold text-black mb-2">Extra Monthly Revenue</div>
+                <div className="text-sm text-gray-600">"Higher ratings brought way more customers. The ROI is insane." - Sarah's Restaurant</div>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl font-black text-purple-600 mb-2">4.9★</div>
+                <div className="text-lg font-bold text-black mb-2">Average Rating</div>
+                <div className="text-sm text-gray-600">"Bad reviews stopped showing up. Now it's only good ones." - Tom's Fitness</div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
 
         {/* Final CTA */}
-        <div className="text-center">
-          <h2 className="text-4xl font-black text-black mb-6 uppercase letter-spacing-title">
-            READY TO 10X YOUR REVIEWS?
+        <div className="text-center bg-gray-50 rounded-lg p-12">
+          <h2 className="text-4xl font-black text-black mb-6">
+            Ready to Transform Your Reviews?
           </h2>
-          <p className="text-lg font-bold text-gray-700 mb-8 uppercase">
-            Join 1,247+ smart business owners who stopped begging for reviews
+          <p className="text-xl text-gray-700 mb-8">
+            Join 1,200+ businesses that stopped worrying about bad reviews
           </p>
           <a 
             href="/auth/register"
-            className="brutalist-button bg-black text-white border-2 border-black hover:bg-white hover:text-black text-2xl px-16 py-8 mb-4 inline-block"
+            className="brutalist-button bg-black text-white border-2 border-black hover:bg-white hover:text-black text-xl px-12 py-6 mb-4 inline-block"
           >
-            START MY FREE TRIAL →
+            Start Free Trial →
           </a>
-          <div className="text-sm font-bold letter-spacing-body uppercase text-gray-600">
-            ⚡ 3-MINUTE SETUP • CANCEL ANYTIME • RISK-FREE GUARANTEE
+          <div className="text-sm text-gray-500">
+            14-day free trial • Cancel anytime • No setup fees
           </div>
         </div>
         
