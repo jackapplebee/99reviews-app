@@ -48,22 +48,30 @@ export default function DashboardPage() {
     console.log('Dashboard - Session:', session)
   }, [status, session])
 
-  // Only redirect if we're definitely unauthenticated (not loading)
-  useEffect(() => {
-    if (status === 'unauthenticated') {
-      console.log('Dashboard - Unauthenticated, redirecting to login')
-      router.push('/auth/login')
-    }
-  }, [status, router])
-
+  // Temporarily disable automatic redirects to debug
   if (status === 'loading') return <div>Loading authentication...</div>
   
   if (status === 'unauthenticated') {
-    return <div>Redirecting to login...</div>
+    return (
+      <div className="p-8">
+        <h1 className="text-2xl font-bold mb-4">Not Authenticated</h1>
+        <p>Status: {status}</p>
+        <p>Session: {session ? 'exists' : 'null'}</p>
+        <a href="/auth/login" className="text-blue-600 hover:underline">Go to Login</a>
+      </div>
+    )
   }
 
   if (!session) {
-    return <div>No session found, please refresh...</div>
+    return (
+      <div className="p-8">
+        <h1 className="text-2xl font-bold mb-4">No Session</h1>
+        <p>Status: {status}</p>
+        <button onClick={() => window.location.reload()} className="bg-blue-500 text-white px-4 py-2 rounded">
+          Refresh Page
+        </button>
+      </div>
+    )
   }
 
   // Calculate stats

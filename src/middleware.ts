@@ -14,6 +14,7 @@ export default withAuth({
 
 export const config = {
   matcher: [
-    '/dashboard/:path*'
+    // Disable middleware completely for now
+    // '/dashboard/:path*'
   ]
 }
