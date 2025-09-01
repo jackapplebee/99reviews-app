@@ -3,6 +3,7 @@
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import { signOut } from 'next-auth/react'
 
 interface Review {
   id: string
@@ -22,6 +23,7 @@ export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState<'reputation' | 'feedback'>('reputation')
   const [reviews, setReviews] = useState<Review[]>([])
   const [loading, setLoading] = useState(true)
+  const [showUserMenu, setShowUserMenu] = useState(false)
 
   useEffect(() => {
     if (status === 'authenticated') {
@@ -80,9 +82,13 @@ export default function DashboardPage() {
       }}>
         <div className="max-w-7xl mx-auto px-5 h-full flex items-center justify-between">
           <div className="flex items-center space-x-6">
-            <h1 className="text-lg font-bold letter-spacing-logo uppercase" style={{ color: 'var(--primary)' }}>
+            <button 
+              onClick={() => window.location.href = '/'}
+              className="text-lg font-bold letter-spacing-logo uppercase hover:opacity-80 transition-opacity" 
+              style={{ color: 'var(--primary)', background: 'none', border: 'none' }}
+            >
               99 REVIEWS
-            </h1>
+            </button>
             <div className="relative">
               <select className="brutalist-button bg-transparent pr-8" style={{ 
                 appearance: 'none', 
@@ -99,9 +105,32 @@ export default function DashboardPage() {
           <div className="flex items-center space-x-4">
             <span className="text-sm">🔔</span>
             <div className="relative">
-              <button className="brutalist-button bg-transparent text-xs font-bold letter-spacing-label">
-                {session?.user.name?.toUpperCase() || 'JACK APPLEBEE'}
+              <button 
+                onClick={() => setShowUserMenu(!showUserMenu)}
+                className="brutalist-button bg-transparent text-xs font-bold letter-spacing-label hover:bg-gray-100"
+              >
+                {session?.user.name?.toUpperCase() || 'USER'} ▼
               </button>
+              
+              {showUserMenu && (
+                <div className="absolute right-0 top-full mt-2 w-48 brutalist-card p-3 z-50" style={{ backgroundColor: 'var(--bg)' }}>
+                  <div className="space-y-2">
+                    <div className="text-xs font-bold letter-spacing-body uppercase" style={{ color: 'var(--gray-dark)' }}>
+                      {session?.user.email}
+                    </div>
+                    <div className="text-xs font-bold letter-spacing-body uppercase" style={{ color: 'var(--gray-dark)' }}>
+                      {session?.user.businessSlug}
+                    </div>
+                    <hr style={{ borderColor: 'var(--primary)' }} />
+                    <button
+                      onClick={() => signOut({ callbackUrl: '/' })}
+                      className="brutalist-button w-full py-2 bg-transparent hover:bg-red-50 text-red-600 text-xs font-bold letter-spacing-label uppercase"
+                    >
+                      SIGN OUT
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
