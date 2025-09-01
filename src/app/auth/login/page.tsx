@@ -31,9 +31,11 @@ function LoginForm() {
         setError('INVALID EMAIL OR PASSWORD')
         console.log('Sign-in error:', result.error)
       } else {
-        console.log('Sign-in successful, redirecting...')
-        // First redirect to success page to verify session
-        window.location.href = '/auth/success'
+        console.log('Sign-in successful, redirecting to dashboard...')
+        // Force a page refresh to ensure session is properly loaded
+        setTimeout(() => {
+          window.location.href = '/dashboard'
+        }, 100)
       }
     } catch (error) {
       setError('SOMETHING WENT WRONG. PLEASE TRY AGAIN.')
