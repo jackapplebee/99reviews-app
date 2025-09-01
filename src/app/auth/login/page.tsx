@@ -32,10 +32,12 @@ function LoginForm() {
         console.log('Sign-in error:', result.error)
       } else {
         console.log('Sign-in successful, redirecting to dashboard...')
-        // Force a page refresh to ensure session is properly loaded
-        setTimeout(() => {
-          window.location.href = '/dashboard'
-        }, 100)
+        // Check if there's a callback URL in the search params
+        const urlParams = new URLSearchParams(window.location.search)
+        const callbackUrl = urlParams.get('callbackUrl') || '/dashboard'
+        
+        // Use window.location for reliable redirect
+        window.location.href = callbackUrl
       }
     } catch (error) {
       setError('SOMETHING WENT WRONG. PLEASE TRY AGAIN.')
