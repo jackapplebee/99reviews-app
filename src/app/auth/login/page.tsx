@@ -21,26 +21,28 @@ function LoginForm() {
     const password = formData.get('password') as string
 
     try {
-      // Get callback URL from search params
-      const urlParams = new URLSearchParams(window.location.search)
-      const callbackUrl = urlParams.get('callbackUrl') || '/dashboard'
-      
-      console.log('Attempting sign in with callbackUrl:', callbackUrl)
-      
-      // Let NextAuth handle the redirect automatically
+      // Use redirect: false and handle manually for reliability
       const result = await signIn('credentials', {
         email,
         password,
-        callbackUrl: callbackUrl,
-        redirect: true // Let NextAuth handle redirect
+        redirect: false
       })
-      
-      // This won't execute if redirect: true works
-      console.log('Sign-in result:', result)
+
+      if (result?.error) {
+        setError('INVALID EMAIL OR PASSWORD')
+        return
+      }
+
+      if (result?.ok) {
+        // Force a full page reload to the dashboard
+        // This ensures the session is properly loaded
+        window.location.replace('/dashboard')
+      }
       
     } catch (error) {
       console.error('Sign-in error:', error)
       setError('SOMETHING WENT WRONG. PLEASE TRY AGAIN.')
+    } finally {
       setIsLoading(false)
     }
   }
