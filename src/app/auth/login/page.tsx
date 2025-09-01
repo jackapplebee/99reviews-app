@@ -32,8 +32,8 @@ function LoginForm() {
         console.log('Sign-in error:', result.error)
       } else {
         console.log('Sign-in successful, redirecting...')
-        // Use window.location for more reliable redirect
-        window.location.href = '/dashboard'
+        // First redirect to success page to verify session
+        window.location.href = '/auth/success'
       }
     } catch (error) {
       setError('SOMETHING WENT WRONG. PLEASE TRY AGAIN.')
