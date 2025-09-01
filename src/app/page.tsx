@@ -6,7 +6,7 @@ export default function HomePage() {
   const { data: session, status } = useSession()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white landing-page">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 landing-page">
       {/* Header */}
       <div className="border-b border-gray-200 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -54,13 +54,13 @@ export default function HomePage() {
         <div className="text-center mb-16">
           {/* Pain-First Headline */}
           <h1 className="landing-hero-title text-5xl md:text-6xl text-gray-900 mb-6">
-            Stop Bad Reviews From<br/>
-            <span className="text-orange-500">Killing Your Business</span>
+            Your Best Customers Never<br/>
+            <span className="text-orange-500">Leave Reviews</span>
           </h1>
           
           {/* Big Promise */}
           <p className="landing-subtitle text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Get 10x more 5-star Google reviews while automatically filtering negative feedback before it goes public
+            Turn silent satisfied customers into vocal advocates while keeping unhappy feedback private
           </p>
 
           {/* Social Proof */}
@@ -100,31 +100,31 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="landing-card p-8">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">🎯</span>
+                  <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Smart Review Routing</h3>
-                <p className="text-gray-600 leading-relaxed">Happy customers (4-5 stars) get sent to Google. Unhappy ones (1-3 stars) stay private for you to address.</p>
+                <p className="text-gray-600 leading-relaxed">Happy customers automatically get sent to Google. Frustrated customers stay private where you can address their concerns.</p>
               </div>
               <div className="landing-card p-8">
                 <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">⚡</span>
+                  <div className="w-6 h-6 bg-green-500 rounded-full"></div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Automated Follow-Up</h3>
-                <p className="text-gray-600 leading-relaxed">Stop manually asking for reviews. Our system automatically sends personalized requests to your customers.</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Effortless Collection</h3>
+                <p className="text-gray-600 leading-relaxed">No more begging for reviews. Your satisfied customers finally speak up because we make it dead simple for them.</p>
               </div>
               <div className="landing-card p-8">
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">🛡️</span>
+                  <div className="w-6 h-6 bg-purple-500 rounded-full"></div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Reputation Protection</h3>
-                <p className="text-gray-600 leading-relaxed">Fix issues privately before they become public problems. Turn unhappy customers into loyal advocates.</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Damage Prevention</h3>
+                <p className="text-gray-600 leading-relaxed">Catch problems before they become public disasters. Turn frustrated customers into satisfied ones behind the scenes.</p>
               </div>
               <div className="landing-card p-8">
                 <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">📈</span>
+                  <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Instant Results</h3>
-                <p className="text-gray-600 leading-relaxed">See more positive reviews within days. No technical setup required - works with any business type.</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Quick Setup</h3>
+                <p className="text-gray-600 leading-relaxed">Start seeing results within days. No technical knowledge required - works for any business size or industry.</p>
               </div>
             </div>
           </div>
@@ -138,20 +138,20 @@ export default function HomePage() {
               <div className="landing-card p-6 text-center">
                 <div className="text-4xl font-bold text-green-600 mb-3">127%</div>
                 <div className="text-lg font-semibold text-gray-900 mb-3">More Google Reviews</div>
-                <div className="text-sm text-gray-600 italic">"Went from 23 to 52 five-star reviews in 30 days. This actually works."</div>
-                <div className="text-xs text-gray-500 mt-2">- Mike's Auto Shop</div>
+                <div className="text-sm text-gray-600 italic">"Finally, our happy customers are actually leaving reviews. We went from 23 to 52 five-star reviews in just one month."</div>
+                <div className="text-xs text-gray-500 mt-2">- Mike Thompson, Auto Shop Owner</div>
               </div>
               <div className="landing-card p-6 text-center">
                 <div className="text-4xl font-bold text-blue-600 mb-3">$47K</div>
                 <div className="text-lg font-semibold text-gray-900 mb-3">Extra Monthly Revenue</div>
-                <div className="text-sm text-gray-600 italic">"Higher ratings brought way more customers. The ROI is insane."</div>
-                <div className="text-xs text-gray-500 mt-2">- Sarah's Restaurant</div>
+                <div className="text-sm text-gray-600 italic">"Better online reputation means more customers finding us. The revenue increase has been incredible."</div>
+                <div className="text-xs text-gray-500 mt-2">- Sarah Chen, Restaurant Owner</div>
               </div>
               <div className="landing-card p-6 text-center">
-                <div className="text-4xl font-bold text-purple-600 mb-3">4.9★</div>
+                <div className="text-4xl font-bold text-purple-600 mb-3">4.9</div>
                 <div className="text-lg font-semibold text-gray-900 mb-3">Average Rating</div>
-                <div className="text-sm text-gray-600 italic">"Bad reviews stopped showing up. Now it's only good ones."</div>
-                <div className="text-xs text-gray-500 mt-2">- Tom's Fitness</div>
+                <div className="text-sm text-gray-600 italic">"The negative reviews stopped appearing online. We handle issues privately now and our rating reflects our actual service quality."</div>
+                <div className="text-xs text-gray-500 mt-2">- Tom Rodriguez, Fitness Center</div>
               </div>
             </div>
           </div>
