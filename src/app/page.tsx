@@ -279,18 +279,18 @@ export default function HomePage() {
             <nav aria-label="Help and support links">
               <h4 className="sub-headline text-primary mb-4">Help</h4>
               <div className="space-y-2">
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabindex="0">Blog</a></div>
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabindex="0">Contact Us</a></div>
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabindex="0">Legal Docs</a></div>
+                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Blog</a></div>
+                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Contact Us</a></div>
+                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Legal Docs</a></div>
               </div>
             </nav>
             
             <nav aria-label="Company information links">
               <h4 className="sub-headline text-primary mb-4">Company</h4>
               <div className="space-y-2">
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabindex="0">Our Story</a></div>
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabindex="0">Careers</a></div>
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabindex="0">Press</a></div>
+                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Our Story</a></div>
+                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Careers</a></div>
+                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Press</a></div>
               </div>
             </nav>
             
@@ -305,10 +305,10 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-between mt-12 pt-8 border-t border-gray-200 caption text-light">
             <div>Copyright © 2024 99Reviews. All rights reserved.</div>
             <nav aria-label="Legal and policy links" className="flex space-x-4">
-              <a href="#" className="hover:text-primary focus-visible" tabindex="0">Sitemap</a>
-              <a href="#" className="hover:text-primary focus-visible" tabindex="0">Terms</a>
-              <a href="#" className="hover:text-primary focus-visible" tabindex="0">Privacy</a>
-              <a href="#" className="hover:text-primary focus-visible" tabindex="0">Cookies</a>
+              <a href="#" className="hover:text-primary focus-visible" tabIndex={0}>Sitemap</a>
+              <a href="#" className="hover:text-primary focus-visible" tabIndex={0}>Terms</a>
+              <a href="#" className="hover:text-primary focus-visible" tabIndex={0}>Privacy</a>
+              <a href="#" className="hover:text-primary focus-visible" tabIndex={0}>Cookies</a>
             </nav>
           </div>
         </div>
