@@ -6,25 +6,25 @@ export default function HomePage() {
   const { data: session, status } = useSession()
 
   return (
-    <div className="min-h-screen bg-white landing-page">
-      {/* Header - Current.com inspired */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-medium text-gray-900">
+    <div className="min-h-screen bg-white">
+      {/* Header - Exact Current.com style */}
+      <div className="bg-black">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <a href="/" className="text-white text-2xl font-medium tracking-tight">
             99Reviews
-          </h1>
-          <div className="flex items-center space-x-3">
+          </a>
+          <div className="flex items-center space-x-1">
             {status === 'authenticated' ? (
               <>
                 <a 
                   href="/dashboard"
-                  className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2"
+                  className="text-white hover:text-gray-300 px-4 py-2 text-sm font-medium"
                 >
                   Dashboard
                 </a>
                 <button 
                   onClick={() => signOut({ callbackUrl: '/' })}
-                  className="text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg transition-colors"
+                  className="bg-white text-black hover:bg-gray-100 px-6 py-2 rounded-full text-sm font-medium transition-colors ml-2"
                 >
                   Sign Out
                 </button>
@@ -33,13 +33,19 @@ export default function HomePage() {
               <>
                 <a 
                   href="/auth/login"
-                  className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2"
+                  className="text-white hover:text-gray-300 px-4 py-2 text-sm font-medium"
                 >
-                  Sign In
+                  Help
+                </a>
+                <a 
+                  href="/auth/login"
+                  className="text-white hover:text-gray-300 px-4 py-2 text-sm font-medium"
+                >
+                  About
                 </a>
                 <a 
                   href="/auth/register"
-                  className="text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-700 px-4 py-2 rounded-lg transition-colors"
+                  className="bg-white text-black hover:bg-gray-100 px-6 py-2 rounded-full text-sm font-medium transition-colors ml-2"
                 >
                   Get Started
                 </a>
@@ -49,154 +55,235 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Hero Section - Current/7shifts inspired */}
-      <div className="max-w-5xl mx-auto px-6 py-20">
-        <div className="text-center">
-          {/* Pain-First Headline */}
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
-            Your best customers never<br/>
-            <span className="font-normal text-indigo-600">leave reviews</span>
+      {/* Hero Section - Current.com style */}
+      <div className="bg-gradient-to-b from-purple-600 via-blue-600 to-indigo-700 text-white">
+        <div className="max-w-4xl mx-auto px-6 py-20 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Power up your<br/>
+            reviews today
           </h1>
           
-          {/* Big Promise */}
-          <p className="text-lg md:text-xl font-light text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Turn silent satisfied customers into vocal advocates while keeping unhappy feedback private
-          </p>
-
-          {/* Primary CTA */}
-          <div className="mb-16">
-            <a 
-              href="/auth/register"
-              className="inline-block bg-indigo-600 text-white font-medium px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors text-base"
-            >
-              Start free trial
-            </a>
-            <div className="text-sm text-gray-500 mt-4">
-              14-day free trial • No credit card required
-            </div>
-          </div>
-
-          {/* Social Proof */}
-          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-gray-500 border-t border-gray-100 pt-8">
-            <span>1,200+ businesses protected</span>
-            <span>47,000+ positive reviews generated</span>
-            <span>3-minute setup</span>
+          <div className="flex items-center justify-center max-w-md mx-auto mb-8">
+            <input 
+              type="email" 
+              placeholder="Enter your business email"
+              className="flex-1 px-4 py-3 text-black text-sm rounded-l-full focus:outline-none"
+            />
+            <button className="bg-white text-black px-6 py-3 text-sm font-medium rounded-r-full hover:bg-gray-100 transition-colors">
+              Get Started
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Features - 7shifts inspired */}
-      <div className="bg-gray-50 py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
-              How it works
-            </h2>
-            <p className="text-lg font-light text-gray-600 max-w-2xl mx-auto">
-              Simple, automated review management that works behind the scenes
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="flex space-x-4">
-              <div className="flex-shrink-0">
-                <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
-                  <div className="w-3 h-3 bg-indigo-600 rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Smart routing</h3>
-                <p className="text-gray-600 leading-relaxed">Happy customers automatically get sent to Google. Frustrated customers stay private where you can address their concerns.</p>
-              </div>
-            </div>
-            
-            <div className="flex space-x-4">
-              <div className="flex-shrink-0">
-                <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                  <div className="w-3 h-3 bg-green-600 rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Effortless collection</h3>
-                <p className="text-gray-600 leading-relaxed">No more begging for reviews. Your satisfied customers finally speak up because we make it simple for them.</p>
-              </div>
-            </div>
-            
-            <div className="flex space-x-4">
-              <div className="flex-shrink-0">
-                <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <div className="w-3 h-3 bg-purple-600 rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Damage prevention</h3>
-                <p className="text-gray-600 leading-relaxed">Catch problems before they become public disasters. Turn frustrated customers into satisfied ones behind the scenes.</p>
-              </div>
-            </div>
-            
-            <div className="flex space-x-4">
-              <div className="flex-shrink-0">
-                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">Quick setup</h3>
-                <p className="text-gray-600 leading-relaxed">Start seeing results within days. No technical knowledge required - works for any business size.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials - Current.com inspired */}
+      {/* Teen Banking Section - Current.com style */}
       <div className="py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
-              Real results from real businesses
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-light text-gray-900 mb-2">127% more reviews</div>
-              <div className="text-sm text-gray-600 mb-4">"Finally, our happy customers are actually leaving reviews. We went from 23 to 52 five-star reviews in just one month."</div>
-              <div className="text-xs text-gray-500">Mike Thompson, Auto Shop</div>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="text-sm font-medium text-gray-500 uppercase tracking-wider">SMART REVIEW MANAGEMENT</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+                Give businesses their very own review filter
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Empower your business with automatic review routing, instant feedback capture, and real-time reputation alerts.
+              </p>
+              <button className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
+                Learn More
+              </button>
             </div>
-            
-            <div className="text-center">
-              <div className="text-3xl font-light text-gray-900 mb-2">$47K extra revenue</div>
-              <div className="text-sm text-gray-600 mb-4">"Better online reputation means more customers finding us. The revenue increase has been incredible."</div>
-              <div className="text-xs text-gray-500">Sarah Chen, Restaurant</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-3xl font-light text-gray-900 mb-2">4.9 average rating</div>
-              <div className="text-sm text-gray-600 mb-4">"Negative reviews stopped appearing online. We handle issues privately and our rating reflects our actual service quality."</div>
-              <div className="text-xs text-gray-500">Tom Rodriguez, Fitness</div>
+            <div className="bg-gray-100 rounded-2xl p-8 h-80 flex items-center justify-center">
+              <div className="text-gray-500 text-lg">Review Management Dashboard</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Final CTA - Current.com inspired */}
-      <div className="bg-indigo-50 py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
-            Ready to turn your silent customers into advocates?
+      {/* Safe and Secure Section */}
+      <div className="bg-gray-50 py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-16">Safe and secure.</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-yellow-400 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <div className="w-8 h-8 bg-yellow-600 rounded"></div>
+              </div>
+              <h3 className="text-lg font-semibold text-black mb-2">Privacy Protected</h3>
+              <p className="text-gray-600">Your customer data stays private and secure with enterprise-grade encryption.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <div className="w-6 h-6 border-2 border-white rounded-sm"></div>
+              </div>
+              <h3 className="text-lg font-semibold text-black mb-2">GDPR Compliant</h3>
+              <p className="text-gray-600">Fully compliant with data protection regulations and privacy standards.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <div className="w-8 h-6 bg-blue-700 rounded"></div>
+              </div>
+              <h3 className="text-lg font-semibold text-black mb-2">Reliable Uptime</h3>
+              <p className="text-gray-600">99.9% uptime guarantee ensures your review system is always working.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Customer Reviews Section - Current.com style */}
+      <div className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-4 h-4 bg-black rounded-sm mr-1"></div>
+                ))}
+              </div>
+              <p className="text-gray-800 mb-6">
+                "99Reviews is just flat out awesome. I highly recommend Current as a primary or a second banking account. So many great benefits!"
+              </p>
+              <div className="flex items-center">
+                <div className="text-sm font-medium text-black">App Store</div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-4 h-4 bg-black rounded-sm mr-1"></div>
+                ))}
+              </div>
+              <p className="text-gray-800 mb-6">
+                "I absolutely love this service, it's super easy to sign up and use. Love that it gives me my reputation back on time, all the time."
+              </p>
+              <div className="flex items-center">
+                <div className="text-sm font-medium text-black">App Store</div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-4 h-4 bg-black rounded-sm mr-1"></div>
+                ))}
+              </div>
+              <p className="text-gray-800 mb-6">
+                "This is the best review management system, better than Yelp and Google combined, and as good as ReviewTrackers 360."
+              </p>
+              <div className="flex items-center">
+                <div className="text-sm font-medium text-black">App Store</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bank Anywhere Section - Current.com style */}
+      <div className="bg-black text-white py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8">
+            Manage reviews anywhere.
           </h2>
-          <p className="text-lg font-light text-gray-600 mb-8">
-            Join 1,200+ businesses that stopped worrying about bad reviews
-          </p>
-          <a 
-            href="/auth/register"
-            className="inline-block bg-indigo-600 text-white font-medium px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors text-base mb-4"
-          >
-            Start free trial
-          </a>
-          <div className="text-sm text-gray-500">
-            14-day free trial • No credit card required
+          
+          <div className="grid md:grid-cols-2 gap-12 mt-16">
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-blue-500 rounded-xl mr-4 flex items-center justify-center">
+                <div className="text-white text-xl">📞</div>
+              </div>
+              <div className="text-left">
+                <div className="text-xl font-semibold">24/7 fast and helpful support</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-blue-500 rounded-xl mr-4 flex items-center justify-center">
+                <div className="text-white text-xl">💳</div>
+              </div>
+              <div className="text-left">
+                <div className="text-xl font-semibold">50000+ reviews managed nationwide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Credit Building Section - Current.com style */}
+      <div className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="bg-gradient-to-br from-pink-400 via-blue-400 to-green-400 rounded-2xl p-8 h-80 flex items-center justify-center">
+              <div className="text-white text-lg font-medium">Review Analytics Dashboard</div>
+            </div>
+            <div className="space-y-6">
+              <div className="text-sm font-medium text-gray-500 uppercase tracking-wider">REPUTATION BUILDING</div>
+              <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+                Boost your online reputation by over 80 points after just six months.
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Plus, get 5% more customers from improved search rankings.
+              </p>
+              <button className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Join Section - Current.com style */}
+      <div className="bg-gray-50 py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-6xl font-bold text-black mb-8">
+            Join over 6 million businesses
+          </h2>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="bg-white py-12 border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="text-2xl font-bold text-black mb-6">99</div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-black mb-4">Help</h4>
+              <div className="space-y-2">
+                <div><a href="#" className="text-gray-600 hover:text-black">Blog</a></div>
+                <div><a href="#" className="text-gray-600 hover:text-black">Contact Us</a></div>
+                <div><a href="#" className="text-gray-600 hover:text-black">Legal Docs</a></div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-black mb-4">Company</h4>
+              <div className="space-y-2">
+                <div><a href="#" className="text-gray-600 hover:text-black">Our Story</a></div>
+                <div><a href="#" className="text-gray-600 hover:text-black">Careers</a></div>
+                <div><a href="#" className="text-gray-600 hover:text-black">Press</a></div>
+              </div>
+            </div>
+            
+            <div>
+              <div className="bg-gray-800 text-white p-4 rounded-lg text-center">
+                <div className="text-sm font-medium mb-2">ACCREDITED BUSINESS</div>
+                <div className="text-2xl font-bold">A</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex flex-wrap items-center justify-between mt-12 pt-8 border-t border-gray-200 text-sm text-gray-500">
+            <div>Copyright © 2024 99Reviews</div>
+            <div className="flex space-x-4">
+              <span>Sitemap</span>
+              <span>Terms</span>
+              <span>Licenses</span>
+              <span>Privacy</span>
+              <span>ESIGN Consent</span>
+            </div>
           </div>
         </div>
       </div>

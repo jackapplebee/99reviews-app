@@ -22,13 +22,8 @@
 body {
   color: var(--primary);
   background: var(--bg);
-  font-family: 'Space Grotesk', monospace;
-  font-weight: 500;
-}
-
-/* Landing page specific styles */
-.landing-page {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
 }
 
 .landing-hero-title {
