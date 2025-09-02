@@ -59,257 +59,579 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero Section - Current.com Design System */}
+      {/* Hero Section - Hormozi Style High-Conversion */}
       <section className="bg-gradient text-white section-lg" aria-labelledby="hero-headline">
         <div className="container text-center fade-in">
-          <h1 id="hero-headline" className="hero-headline text-white mb-6">
-            Power up your<br/>
-            reviews today
-          </h1>
+          <div className="max-w-4xl mx-auto">
+            <h1 id="hero-headline" className="hero-headline text-white mb-4">
+              50 real five-star reviews,<br/>
+              <span className="text-yellow-300">on us</span>
+            </h1>
+            
+            <p className="body-large text-white opacity-90 mb-8 max-w-2xl mx-auto">
+              No fake reviews. No incentives. Just happy customers finally leaving the reviews they meant to write.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <button 
+                className="btn-primary bg-yellow-400 text-black hover:bg-yellow-300 px-8 py-4 text-lg font-bold"
+                aria-label="Get your first 50 reviews free"
+              >
+                Get Your First 50 Reviews FREE
+              </button>
+              <button 
+                className="btn-secondary border-white text-white hover:bg-white hover:text-black px-6 py-4"
+                aria-label="Watch how it works"
+              >
+                Watch How It Works (2 min)
+              </button>
+            </div>
+            
+            <div className="caption text-white opacity-75">
+              ✓ No credit card required • ✓ Setup in 48 hours • ✓ Results in 3 days
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Proof Bar */}
+      <section className="section-sm bg-black text-white" aria-labelledby="proof-headline">
+        <div className="container text-center fade-in">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+              <span className="body-text text-white font-medium">LIVE:</span>
+            </div>
+            <div className="text-2xl font-bold text-yellow-400" data-count="14847">
+              14,847 five-star reviews
+            </div>
+            <div className="body-text text-white opacity-90">
+              delivered this month across 67 restaurants
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Holy Shit Visual Proof */}
+      <section className="section" aria-labelledby="proof-headline">
+        <div className="container text-center fade-in">
+          <h2 id="proof-headline" className="section-headline text-primary mb-12">
+            Real Results From Real Restaurants
+          </h2>
           
-          <form className="flex items-center justify-center max-w-md mx-auto mb-8" role="search" aria-label="Email signup">
-            <label htmlFor="email-signup" className="sr-only">Enter your business email</label>
-            <input 
-              id="email-signup"
-              type="email" 
-              placeholder="Enter your business email"
-              className="input flex-1 rounded-l-full border-0 focus:ring-2 focus:ring-white"
-              required
-              aria-describedby="email-help"
-            />
-            <button 
-              type="submit"
-              className="btn-primary bg-white text-black hover:bg-gray-100 rounded-r-full border-0"
-              aria-label="Start your free trial"
-            >
-              Get Started
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Before Card */}
+            <div className="card bg-red-50 border-2 border-red-200">
+              <div className="text-red-600 font-bold mb-4 text-lg">BEFORE 99Reviews</div>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <span className="body-text">Google Rating:</span>
+                  <span className="text-2xl font-bold text-red-600">4.2 ⭐</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="body-text">Monthly Reviews:</span>
+                  <span className="text-2xl font-bold text-red-600">2</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="body-text">Total Reviews:</span>
+                  <span className="text-2xl font-bold text-red-600">31</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* After Card */}
+            <div className="card bg-green-50 border-2 border-green-200">
+              <div className="text-green-600 font-bold mb-4 text-lg">AFTER 99Reviews</div>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <span className="body-text">Google Rating:</span>
+                  <span className="text-2xl font-bold text-green-600">4.8 ⭐</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="body-text">Monthly Reviews:</span>
+                  <span className="text-2xl font-bold text-green-600">47</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="body-text">Total Reviews:</span>
+                  <span className="text-2xl font-bold text-green-600">178</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8">
+            <p className="body-text text-secondary mb-4">
+              <strong>Real data from Applebee's Fish & Seafood - 45 days</strong>
+            </p>
+            <button className="btn-primary">
+              See Live Dashboard
             </button>
-          </form>
-          <div id="email-help" className="caption text-white opacity-90">
-            Start your 14-day free trial • No credit card required
           </div>
         </div>
       </section>
-
-      {/* Feature Section - Smart Review Management */}
-      <section className="section" aria-labelledby="feature-headline">
-        <div className="container">
-          <div className="grid desktop-grid-cols-2 gap-12 items-center fade-in">
-            <div className="space-y-6">
-              <div className="trust-badge uppercase">
-                Smart Review Management
-              </div>
-              <h2 id="feature-headline" className="section-headline text-primary">
-                Give businesses their very own review filter
-              </h2>
-              <p className="body-large text-secondary">
-                Empower your business with automatic review routing, instant feedback capture, and real-time reputation alerts.
-              </p>
-              <button className="btn-secondary focus-visible" aria-label="Learn more about review management">
-                Learn More
-              </button>
-            </div>
-            <div className="card bg-gray-50 h-80 flex items-center justify-center scale-hover" role="img" aria-label="Review management dashboard preview">
-              <div className="text-secondary body-text">Review Management Dashboard</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust & Security Section */}
-      <section className="section bg-gray-50" aria-labelledby="security-headline">
-        <div className="container-narrow text-center">
-          <h2 id="security-headline" className="section-headline text-primary mb-16 fade-in">
-            Safe and secure.
-          </h2>
-          <div className="grid desktop-grid-cols-3 gap-12">
-            <div className="text-center fade-in fade-in-delay-1">
-              <div className="w-16 h-16 bg-yellow-400 rounded-full mx-auto mb-6 flex items-center justify-center" role="img" aria-label="Privacy protection icon">
-                <div className="w-8 h-8 bg-yellow-600 rounded"></div>
-              </div>
-              <h3 className="sub-headline text-primary mb-3">Privacy Protected</h3>
-              <p className="body-text text-secondary">Your customer data stays private and secure with enterprise-grade encryption.</p>
-            </div>
-            
-            <div className="text-center fade-in fade-in-delay-2">
-              <div className="w-16 h-16 bg-success rounded-full mx-auto mb-6 flex items-center justify-center security-badge" role="img" aria-label="GDPR compliance icon">
-                <div className="w-6 h-6 border-2 border-white rounded-sm"></div>
-              </div>
-              <h3 className="sub-headline text-primary mb-3">GDPR Compliant</h3>
-              <p className="body-text text-secondary">Fully compliant with data protection regulations and privacy standards.</p>
-            </div>
-            
-            <div className="text-center fade-in fade-in-delay-3">
-              <div className="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center" role="img" aria-label="Reliable uptime icon">
-                <div className="w-8 h-6 bg-blue-700 rounded"></div>
-              </div>
-              <h3 className="sub-headline text-primary mb-3">Reliable Uptime</h3>
-              <p className="body-text text-secondary">99.9% uptime guarantee ensures your review system is always working.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Reviews Section */}
-      <section className="section" aria-labelledby="testimonials-headline">
-        <div className="container">
-          <h2 id="testimonials-headline" className="sr-only">Customer Testimonials</h2>
-          <div className="grid desktop-grid-cols-3 gap-8">
-            <article className="testimonial scale-hover fade-in" role="article" aria-label="Customer testimonial">
-              <div className="star-rating mb-4" role="img" aria-label="5 star rating">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="star" aria-hidden="true"></div>
-                ))}
-              </div>
-              <blockquote className="body-text text-primary mb-6">
-                "99Reviews is just flat out awesome. I highly recommend it as a primary review management solution. So many great benefits!"
-              </blockquote>
-              <footer>
-                <cite className="caption font-medium text-primary">Business Owner</cite>
-              </footer>
-            </article>
-
-            <article className="testimonial scale-hover fade-in fade-in-delay-1" role="article" aria-label="Customer testimonial">
-              <div className="star-rating mb-4" role="img" aria-label="5 star rating">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="star" aria-hidden="true"></div>
-                ))}
-              </div>
-              <blockquote className="body-text text-primary mb-6">
-                "I absolutely love this service, it's super easy to sign up and use. Love that it gives me my reputation back on time, all the time."
-              </blockquote>
-              <footer>
-                <cite className="caption font-medium text-primary">Restaurant Manager</cite>
-              </footer>
-            </article>
-
-            <article className="testimonial scale-hover fade-in fade-in-delay-2" role="article" aria-label="Customer testimonial">
-              <div className="star-rating mb-4" role="img" aria-label="5 star rating">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="star" aria-hidden="true"></div>
-                ))}
-              </div>
-              <blockquote className="body-text text-primary mb-6">
-                "This is the best review management system, better than Yelp and Google combined, and as good as ReviewTrackers 360."
-              </blockquote>
-              <footer>
-                <cite className="caption font-medium text-primary">Service Provider</cite>
-              </footer>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Highlight Section */}
-      <section className="section bg-black text-white" aria-labelledby="features-headline">
-        <div className="container-narrow text-center">
-          <h2 id="features-headline" className="section-headline text-white mb-16 fade-in">
-            Manage reviews anywhere.
+      
+      {/* You Do Nothing Section */}
+      <section className="section bg-gray-50" aria-labelledby="easy-headline">
+        <div className="container text-center fade-in">
+          <h2 id="easy-headline" className="section-headline text-primary mb-12">
+            You Do Nothing. We Do Everything.
           </h2>
           
-          <div className="grid desktop-grid-cols-2 gap-12 mt-16">
-            <div className="flex items-center fade-in fade-in-delay-1">
-              <div className="w-12 h-12 bg-blue-600 rounded-xl mr-4 flex items-center justify-center" role="img" aria-label="Support icon">
-                <span className="text-white text-xl" aria-hidden="true">📞</span>
-              </div>
-              <div className="text-left">
-                <div className="sub-headline text-white">24/7 fast and helpful support</div>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div>
+              <h3 className="sub-headline text-red-600 mb-6">We Handle:</h3>
+              <div className="space-y-4 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Email design & sending</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Timing optimization</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Review routing</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Complaint capture</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Weekly reporting</span>
+                </div>
               </div>
             </div>
             
-            <div className="flex items-center fade-in fade-in-delay-2">
-              <div className="w-12 h-12 bg-blue-600 rounded-xl mr-4 flex items-center justify-center" role="img" aria-label="Scale icon">
-                <span className="text-white text-xl" aria-hidden="true">💳</span>
-              </div>
-              <div className="text-left">
-                <div className="sub-headline text-white">50000+ reviews managed nationwide</div>
+            <div>
+              <h3 className="sub-headline text-green-600 mb-6">You Handle:</h3>
+              <div className="space-y-4 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Counting your new reviews</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Reading happy feedback</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Watching revenue grow</span>
+                </div>
               </div>
             </div>
+          </div>
+          
+          <div className="mt-12 p-6 bg-yellow-100 rounded-lg max-w-md mx-auto">
+            <p className="body-large font-bold text-black">
+              Setup takes 48 hours. Results start day 3.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Reputation Building Section */}
-      <section className="section" aria-labelledby="reputation-headline">
-        <div className="container">
-          <div className="grid desktop-grid-cols-2 gap-12 items-center">
-            <div className="bg-gradient rounded-2xl p-8 h-80 flex items-center justify-center scale-hover fade-in" role="img" aria-label="Review analytics dashboard preview">
-              <div className="text-white body-large font-medium">Review Analytics Dashboard</div>
-            </div>
-            <div className="space-y-6 fade-in fade-in-delay-1">
-              <div className="trust-badge uppercase">
-                Reputation Building
-              </div>
-              <h2 id="reputation-headline" className="section-headline text-primary">
-                Boost your online reputation by over 80 points after just six months.
-              </h2>
-              <p className="body-large text-secondary">
-                Plus, get 5% more customers from improved search rankings.
-              </p>
-              <button className="btn-secondary focus-visible" aria-label="Learn more about reputation building">
-                Learn More
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Section */}
-      <section className="section bg-gray-50" aria-labelledby="social-proof-headline">
-        <div className="container-narrow text-center">
-          <h2 id="social-proof-headline" className="section-headline text-primary mb-8 fade-in">
-            Join over 50,000 businesses
+      {/* Money Section - ROI Calculator */}
+      <section className="section" aria-labelledby="money-headline">
+        <div className="container text-center fade-in">
+          <h2 id="money-headline" className="section-headline text-primary mb-12">
+            Let's Talk Money
           </h2>
-          <div className="flex flex-wrap justify-center gap-6 items-center mt-12 fade-in fade-in-delay-1">
-            <div className="counter" data-count="50000">50,000+</div>
-            <div className="text-secondary">businesses trust 99Reviews</div>
+          
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-12">
+            <div className="card bg-red-50 border-2 border-red-200">
+              <h3 className="sub-headline text-red-600 mb-6">Without 99Reviews</h3>
+              <div className="space-y-4 text-left">
+                <div className="flex justify-between">
+                  <span className="body-text">You're at:</span>
+                  <span className="font-bold text-red-600">4.2 stars</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="body-text">You lose:</span>
+                  <span className="font-bold text-red-600">30% of customers</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="body-text">Lost revenue:</span>
+                  <span className="font-bold text-red-600 text-xl">$50K/month</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="card bg-green-50 border-2 border-green-200">
+              <h3 className="sub-headline text-green-600 mb-6">With 99Reviews</h3>
+              <div className="space-y-4 text-left">
+                <div className="flex justify-between">
+                  <span className="body-text">You jump to:</span>
+                  <span className="font-bold text-green-600">4.8 stars</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="body-text">You capture:</span>
+                  <span className="font-bold text-green-600">That 30%</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="body-text">ROI:</span>
+                  <span className="font-bold text-green-600 text-xl">Week One</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="card bg-gradient-to-r from-yellow-400 to-orange-400 text-black max-w-lg mx-auto">
+            <h3 className="text-2xl font-bold mb-4">Revenue Calculator</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="body-text font-medium mb-2 block">Current Monthly Revenue:</label>
+                <input 
+                  type="text" 
+                  placeholder="$50,000"
+                  className="input w-full text-center text-xl font-bold"
+                />
+              </div>
+              <div className="border-t-2 border-black pt-4">
+                <div className="text-3xl font-bold mb-2">Potential Monthly Gain:</div>
+                <div className="text-4xl font-black text-green-700">+$15,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof - Real Testimonials */}
+      <section className="section bg-gray-50" aria-labelledby="testimonials-headline">
+        <div className="container text-center fade-in">
+          <h2 id="testimonials-headline" className="section-headline text-primary mb-12">
+            But Wait, Is This Actually Real?
+          </h2>
+          
+          <div className="mb-12">
+            <div className="bg-black rounded-lg p-8 max-w-2xl mx-auto">
+              <div className="text-white mb-4">
+                <div className="text-sm opacity-75 mb-2">Video Testimonial - 30 seconds</div>
+                <div className="bg-gray-800 rounded-lg p-8 text-center">
+                  <div className="text-6xl mb-4">▶️</div>
+                  <div className="body-text">Restaurant owner showing actual Google reviews dashboard</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid desktop-grid-cols-3 gap-8 mb-12">
+            <article className="card scale-hover fade-in" role="article">
+              <div className="star-rating mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="star" aria-hidden="true"></div>
+                ))}
+              </div>
+              <blockquote className="body-text text-primary mb-6">
+                "We went from 31 reviews to 178 reviews in 6 weeks. Revenue is up $18K per month."
+              </blockquote>
+              <footer>
+                <div className="font-bold">Sarah Martinez</div>
+                <cite className="caption text-secondary">Bella Vista Italian</cite>
+              </footer>
+            </article>
+
+            <article className="card scale-hover fade-in fade-in-delay-1" role="article">
+              <div className="star-rating mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="star" aria-hidden="true"></div>
+                ))}
+              </div>
+              <blockquote className="body-text text-primary mb-6">
+                "52 five-star reviews in our first month. My staff doesn't have to beg anyone anymore."
+              </blockquote>
+              <footer>
+                <div className="font-bold">Marcus Thompson</div>
+                <cite className="caption text-secondary">Thompson's Grill</cite>
+              </footer>
+            </article>
+
+            <article className="card scale-hover fade-in fade-in-delay-2" role="article">
+              <div className="star-rating mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="star" aria-hidden="true"></div>
+                ))}
+              </div>
+              <blockquote className="body-text text-primary mb-6">
+                "4.2 to 4.8 stars in 45 days. We're booked solid now. This actually works."
+              </blockquote>
+              <footer>
+                <div className="font-bold">Jennifer Wu</div>
+                <cite className="caption text-secondary">Golden Dragon</cite>
+              </footer>
+            </article>
+          </div>
+          
+          <button className="btn-primary bg-blue-600 text-white px-8 py-4">
+            Watch Us Generate a Review Live
+          </button>
+        </div>
+      </section>
+
+      {/* Competitive Advantage Section */}
+      <section className="section bg-red-600 text-white" aria-labelledby="competitive-headline">
+        <div className="container text-center fade-in">
+          <h2 id="competitive-headline" className="section-headline text-white mb-8">
+            Your Competitors Are Already Catching On
+          </h2>
+          
+          <div className="max-w-3xl mx-auto mb-12">
+            <p className="body-large text-white mb-6">
+              In your area, <strong>3 restaurants</strong> started using 99Reviews last month.
+            </p>
+            <p className="body-large text-white mb-6">
+              They're averaging <strong className="text-yellow-300">52 new five-star reviews each</strong>.
+            </p>
+            <p className="body-large text-white font-bold">
+              The question isn't IF you'll automate reviews.<br/>
+              It's whether you'll be first or playing catch-up.
+            </p>
+          </div>
+          
+          <div className="bg-white bg-opacity-10 rounded-lg p-8 max-w-2xl mx-auto">
+            <div className="text-white text-center">
+              <div className="text-6xl mb-4">🗺️</div>
+              <p className="body-text text-white opacity-90">
+                Interactive map showing anonymous pins of restaurants using 99Reviews in your city
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Two Types of Restaurants */}
+      <section className="section" aria-labelledby="types-headline">
+        <div className="container text-center fade-in">
+          <h2 id="types-headline" className="section-headline text-primary mb-12">
+            There Are Only Two Types of Restaurants Now
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Type 1 - The Beggars */}
+            <div className="card bg-red-50 border-2 border-red-200 text-left">
+              <div className="text-center mb-6">
+                <div className="text-4xl mb-2">😭</div>
+                <h3 className="text-2xl font-bold text-red-600">Type 1: The Beggars</h3>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm">❌</div>
+                  <span className="body-text">Awkwardly ask for reviews</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm">❌</div>
+                  <span className="body-text">Get 2% success rate</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm">❌</div>
+                  <span className="body-text">Staff hate doing it</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm">❌</div>
+                  <span className="body-text">Customers feel pressured</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Type 2 - The Automators */}
+            <div className="card bg-green-50 border-2 border-green-200 text-left">
+              <div className="text-center mb-6">
+                <div className="text-4xl mb-2">😎</div>
+                <h3 className="text-2xl font-bold text-green-600">Type 2: The Automators</h3>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Never mention reviews</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Get 40% success rate</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Staff love it</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                  <span className="body-text">Customers feel valued</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-12">
+            <h3 className="text-3xl font-bold text-primary mb-8">
+              Which one are you?
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Push - Three Options */}
+      <section className="section bg-black text-white" aria-labelledby="final-headline">
+        <div className="container text-center fade-in">
+          <h2 id="final-headline" className="section-headline text-white mb-12">
+            Look, You Have Three Options
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Option 1 */}
+            <div className="card bg-red-900 border-2 border-red-500">
+              <div className="text-center mb-4">
+                <div className="text-3xl mb-2">❌</div>
+                <h3 className="text-xl font-bold text-red-300">Option 1</h3>
+              </div>
+              <h4 className="text-lg font-bold text-white mb-4">Keep doing what you're doing</h4>
+              <div className="text-red-300 space-y-2">
+                <div>• 2 reviews/month</div>
+                <div>• Slowly declining rating</div>
+                <div>• Losing customers to competitors</div>
+              </div>
+            </div>
+            
+            {/* Option 2 */}
+            <div className="card bg-yellow-900 border-2 border-yellow-500">
+              <div className="text-center mb-4">
+                <div className="text-3xl mb-2">⚠️</div>
+                <h3 className="text-xl font-bold text-yellow-300">Option 2</h3>
+              </div>
+              <h4 className="text-lg font-bold text-white mb-4">Try another review platform</h4>
+              <div className="text-yellow-300 space-y-2">
+                <div>• Complicated software</div>
+                <div>• Your staff won't use it</div>
+                <div>• Waste $500/month</div>
+              </div>
+            </div>
+            
+            {/* Option 3 */}
+            <div className="card bg-green-900 border-2 border-green-400 scale-hover">
+              <div className="text-center mb-4">
+                <div className="text-3xl mb-2">✅</div>
+                <h3 className="text-xl font-bold text-green-300">Option 3</h3>
+              </div>
+              <h4 className="text-lg font-bold text-white mb-4">Get your first 50 five-star reviews free</h4>
+              <div className="text-green-300 space-y-2">
+                <div>• 4.8 stars guaranteed</div>
+                <div>• $50K more monthly revenue</div>
+                <div>• Setup in 48 hours</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="max-w-2xl mx-auto">
+            <button className="btn-primary bg-yellow-400 text-black px-12 py-6 text-2xl font-bold mb-4 w-full md:w-auto">
+              Start My First 50 Reviews FREE
+            </button>
+            <div className="caption text-white opacity-75">
+              No credit card required for first 50 reviews
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guarantee Section */}
+      <section className="section-sm bg-yellow-400 text-black" aria-labelledby="guarantee-headline">
+        <div className="container text-center fade-in">
+          <div className="max-w-4xl mx-auto">
+            <h2 id="guarantee-headline" className="text-3xl font-bold mb-6">
+              Our Iron-Clad Guarantee
+            </h2>
+            <p className="text-2xl font-bold mb-4">
+              If you don't get 50 five-star reviews in your first 60 days,
+            </p>
+            <p className="text-3xl font-black">
+              we work for FREE until you do.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-sm bg-gray-50" aria-labelledby="faq-headline">
+        <div className="container fade-in">
+          <h2 id="faq-headline" className="section-headline text-primary text-center mb-12">
+            Quick Questions, Straight Answers
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-bold text-primary mb-2">"Is this ethical?"</h3>
+                <p className="body-text text-secondary">Yes, we're just helping real customers share real experiences. Nothing fake, nothing forced.</p>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-bold text-primary mb-2">"What if we get bad reviews?"</h3>
+                <p className="body-text text-secondary">That's the point - they go private to you instead of public on Google. You can fix the problem quietly.</p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-bold text-primary mb-2">"Do we need to train staff?"</h3>
+                <p className="body-text text-secondary">Zero training. It's completely automated. Your staff won't even know it's running.</p>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-bold text-primary mb-2">"What if we already ask for reviews?"</h3>
+                <p className="body-text text-secondary">You'll 5X your current results. Most restaurants go from 2 reviews/month to 40+ reviews/month.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-12 border-t border-gray-200" role="contentinfo">
+      <footer className="bg-black text-white py-12" role="contentinfo">
         <div className="container">
+          <div className="text-center mb-8">
+            <div className="text-3xl font-bold text-yellow-400 mb-4">99Reviews</div>
+            <p className="body-large text-white opacity-90">
+              The only review system that guarantees 50 five-star reviews
+            </p>
+          </div>
+          
           <div className="grid desktop-grid-cols-4 gap-8 fade-in">
-            <div>
-              <div className="text-2xl font-bold text-primary mb-6" aria-label="99Reviews logo">99</div>
-              <p className="body-text text-secondary">Professional review management for modern businesses.</p>
-            </div>
-            
             <nav aria-label="Help and support links">
-              <h4 className="sub-headline text-primary mb-4">Help</h4>
+              <h4 className="sub-headline text-white mb-4">Support</h4>
               <div className="space-y-2">
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Blog</a></div>
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Contact Us</a></div>
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Legal Docs</a></div>
+                <div><a href="#" className="text-white opacity-75 hover:opacity-100 focus-visible" tabIndex={0}>Help Center</a></div>
+                <div><a href="#" className="text-white opacity-75 hover:opacity-100 focus-visible" tabIndex={0}>Contact Us</a></div>
+                <div><a href="#" className="text-white opacity-75 hover:opacity-100 focus-visible" tabIndex={0}>Live Chat</a></div>
               </div>
             </nav>
             
             <nav aria-label="Company information links">
-              <h4 className="sub-headline text-primary mb-4">Company</h4>
+              <h4 className="sub-headline text-white mb-4">Company</h4>
               <div className="space-y-2">
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Our Story</a></div>
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Careers</a></div>
-                <div><a href="#" className="text-secondary hover:text-primary focus-visible" tabIndex={0}>Press</a></div>
+                <div><a href="#" className="text-white opacity-75 hover:opacity-100 focus-visible" tabIndex={0}>About</a></div>
+                <div><a href="#" className="text-white opacity-75 hover:opacity-100 focus-visible" tabIndex={0}>Case Studies</a></div>
+                <div><a href="#" className="text-white opacity-75 hover:opacity-100 focus-visible" tabIndex={0}>Reviews</a></div>
+              </div>
+            </nav>
+            
+            <nav aria-label="Legal links">
+              <h4 className="sub-headline text-white mb-4">Legal</h4>
+              <div className="space-y-2">
+                <div><a href="#" className="text-white opacity-75 hover:opacity-100 focus-visible" tabIndex={0}>Terms</a></div>
+                <div><a href="#" className="text-white opacity-75 hover:opacity-100 focus-visible" tabIndex={0}>Privacy</a></div>
+                <div><a href="#" className="text-white opacity-75 hover:opacity-100 focus-visible" tabIndex={0}>Cookies</a></div>
               </div>
             </nav>
             
             <div>
-              <div className="bg-black text-white p-6 rounded-lg text-center trust-badge" role="img" aria-label="Business accreditation badge">
-                <div className="caption font-medium mb-2">TRUSTED BUSINESS</div>
-                <div className="text-2xl font-bold">A+</div>
+              <h4 className="sub-headline text-white mb-4">Contact</h4>
+              <div className="text-white opacity-75 space-y-2">
+                <div>📧 hello@99reviews.com</div>
+                <div>📞 (555) 99-REVIEW</div>
+                <div>💬 24/7 Live Chat</div>
               </div>
             </div>
           </div>
           
-          <div className="flex flex-wrap items-center justify-between mt-12 pt-8 border-t border-gray-200 caption text-light">
-            <div>Copyright © 2024 99Reviews. All rights reserved.</div>
-            <nav aria-label="Legal and policy links" className="flex space-x-4">
-              <a href="#" className="hover:text-primary focus-visible" tabIndex={0}>Sitemap</a>
-              <a href="#" className="hover:text-primary focus-visible" tabIndex={0}>Terms</a>
-              <a href="#" className="hover:text-primary focus-visible" tabIndex={0}>Privacy</a>
-              <a href="#" className="hover:text-primary focus-visible" tabIndex={0}>Cookies</a>
-            </nav>
+          <div className="text-center mt-12 pt-8 border-t border-gray-800 caption text-white opacity-50">
+            Copyright © 2024 99Reviews. We guarantee your first 50 reviews.
           </div>
         </div>
       </footer>
